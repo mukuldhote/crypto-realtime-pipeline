@@ -35,6 +35,11 @@ Streamlit Dashboard
 
 ---
 
+## Dashboard
+
+![Dashboard](screenshots/dashboard_1)
+
+![Dashboard](screenshots/Dashboard_2)
 
 
 
