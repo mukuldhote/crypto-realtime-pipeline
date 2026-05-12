@@ -96,24 +96,12 @@ The complete pipeline was deployed on AWS EC2 to simulate a cloud-based real-tim
 ```text
 crypto-realtime-pipeline/
 │
-├── producer/
-│   ├── producer.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── consumer/
-│   ├── consumer.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── visualization/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
-├── docker-compose.yml
-├── start_pipeline.sh
-├── stop_pipeline.sh
+├── producer.py          # Kafka producer (Binance API → Kafka)
+├── consumer.py          # Kafka consumer (Kafka → PostgreSQL)
+├── app.py               # Streamlit dashboard
+├── Dockerfile           # Common Docker image
+├── requirements.txt     # Python dependencies
+├── docker-compose.yml   # Multi-container orchestration
 └── README.md
 ```
 
