@@ -37,9 +37,9 @@ Streamlit Dashboard
 
 ## Dashboard
 
-![Dashboard](screenshots/dashboard_1)
+![Dashboard](screenshots/dashboard_1.png)
 
-![Dashboard](screenshots/Dashboard_2)
+![Dashboard](screenshots/dashboard_2.png)
 
 
 
