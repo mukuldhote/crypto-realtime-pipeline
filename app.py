@@ -14,7 +14,7 @@ st.title("🚀 Crypto Live Dashboard")
 @st.cache_resource
 def get_connection():
     return psycopg2.connect(
-        host="localhost",
+        host="postgres",
         database="crypto",
         user="admin",
         password="admin"

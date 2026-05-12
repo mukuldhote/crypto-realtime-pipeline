@@ -31,14 +31,17 @@ services:
 
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
 
+      # ✅ Internal Docker networking
       KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
 
+      # ✅ Single node setup
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
-      # ✅ Default partitions
+      # ✅ Partitioning support
       KAFKA_NUM_PARTITIONS: 3
 
+      # ✅ Auto topic creation
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
 
     restart: unless-stopped
@@ -76,6 +79,61 @@ services:
 
     depends_on:
       - kafka
+
+    restart: unless-stopped
+
+  # ---------------------- PRODUCER ----------------------
+  producer:
+    build: .
+    container_name: producer
+
+    command: python kafka_producer.py
+
+    depends_on:
+      - kafka
+
+    restart: unless-stopped
+
+  # ---------------------- CONSUMER 1 ----------------------
+  consumer-1:
+    build: .
+    container_name: consumer-1
+
+    command: python kafka_consumer.py
+
+    depends_on:
+      - kafka
+      - postgres
+
+    restart: unless-stopped
+
+  # ---------------------- CONSUMER 2 ----------------------
+  consumer-2:
+    build: .
+    container_name: consumer-2
+
+    command: python kafka_consumer.py
+
+    depends_on:
+      - kafka
+      - postgres
+
+    restart: unless-stopped
+
+  # ---------------------- STREAMLIT DASHBOARD ----------------------
+  dashboard:
+    build: .
+    container_name: dashboard
+
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+
+    ports:
+      - "8501:8501"
+
+    depends_on:
+      - postgres
+
+    restart: unless-stopped
 
 # ---------------------- VOLUMES ----------------------
 volumes:

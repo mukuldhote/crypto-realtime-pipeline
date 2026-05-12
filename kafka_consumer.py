@@ -10,7 +10,7 @@ BATCH_SIZE = 10
 
 # ---------------------- DB CONNECTION ----------------------
 conn = psycopg2.connect(
-    host="localhost",
+    host="postgres",
     database="crypto",
     user="admin",
     password="admin"
@@ -41,7 +41,7 @@ consumer = KafkaConsumer(
 
     TOPIC_NAME,
 
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers='kafka:9092',
 
     api_version=(0, 10, 1),
 

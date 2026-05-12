@@ -12,7 +12,7 @@ url = "https://api.binance.com/api/v3/ticker/price"
 
 # ---------------------- KAFKA PRODUCER ----------------------
 producer = KafkaProducer(
-    bootstrap_servers='localhost:9092',
+    bootstrap_servers='kafka:9092',
     api_version=(0, 10, 1),
 
     value_serializer=lambda v: json.dumps(v).encode('utf-8'),
