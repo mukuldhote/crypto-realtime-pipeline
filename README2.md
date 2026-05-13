@@ -1,5 +1,3 @@
----
-
 # crypto-realtime-pipeline
 
 I built this to get hands-on with real-time streaming — the kind of thing you can't fully grasp just by reading docs or following along with a tutorial dataset that never changes.
