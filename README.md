@@ -76,6 +76,8 @@ Multiple consumers can process data in parallel using the same consumer group, m
 
 Instead of inserting records one by one, the consumer performs batch inserts into PostgreSQL to reduce overhead and improve performance.
 
+![Postgres Data](screenshots/postgres-data.png)
+
 ## ✅ Interactive Dashboard
 
 The Streamlit dashboard provides:
@@ -121,6 +123,7 @@ Topic Name: crypto-topic
 Partitions: 3
 Replication Factor: 1
 ```
+![Kafka Partitions](screenshots/kafka-partitions.png)
 
 ---
 
@@ -151,6 +154,8 @@ Benefits:
 * Parallel processing
 * Fault tolerance
 * Horizontal scalability
+
+![Kafka Partitions](screenshots/kafka-consumers.png)
 
 ---
 
@@ -199,6 +204,8 @@ docker-compose up -d
 docker-compose down
 ```
 
+![Docker Containers](screenshots/docker-containers.png)
+
 ---
 
 # ☁️ AWS Deployment
@@ -211,6 +218,8 @@ docker-compose down
 | Instance Type | t3.small                |
 | Storage       | 20 GB gp3               |
 
+![AWS Deployment](screenshots/aws-deployment_1.png)
+
 ---
 
 ## Open Ports
@@ -222,6 +231,8 @@ docker-compose down
 | 8081 | Kafka UI            |
 | 9092 | Kafka Broker        |
 | 5432 | PostgreSQL          |
+
+![AWS Deployment](screenshots/aws-deployment_2.png)
 
 ---
 
