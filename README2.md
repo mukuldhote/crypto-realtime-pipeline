@@ -1,5 +1,3 @@
-You're right, sorry. Here's the full corrected README with the Docker deployment section restored in its proper place:
-
 ---
 
 # crypto-realtime-pipeline
@@ -21,6 +19,7 @@ Binance API → Kafka Producer → Kafka Topic (3 partitions) → Consumer Group
 ## Dashboard
 
 ![Dashboard](screenshots/dashboard_1.png)
+
 ![Dashboard](screenshots/dashboard_2.png)
 
 ---
@@ -115,7 +114,6 @@ docker-compose down
 
 Deployed the full stack on EC2 to see how it holds up outside of localhost.
 
-| | |
 |---|---|
 | OS | Ubuntu Server 24.04 LTS |
 | Instance | t3.small |
@@ -132,6 +130,7 @@ Deployed the full stack on EC2 to see how it holds up outside of localhost.
 | 5432 | PostgreSQL |
 
 ![AWS](screenshots/aws-deployment_1.png)
+
 ![AWS](screenshots/aws-deployment_2.png)
 
 One thing that caught me off guard: Binance restricts API access from certain AWS IP ranges. Didn't see that coming, and working through it was probably the most genuinely real-world part of the whole project.
