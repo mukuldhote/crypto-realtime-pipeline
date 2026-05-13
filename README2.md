@@ -112,7 +112,6 @@ docker-compose down
 
 Deployed the full stack on EC2 to see how it holds up outside of localhost.
 
-|---|---|
 | OS | Ubuntu Server 24.04 LTS |
 | Instance | t3.small |
 | Storage | 20 GB gp3 |
